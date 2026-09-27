@@ -5,180 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA Telemetry & AI Analytics Dashboard</title>
     <style>
-        body { 
-            background: linear-gradient(135deg, #1e0b36, #0b0f19, #0a1128); 
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #f3f4f6; 
-            font-family: 'Courier New', Courier, monospace; 
-            padding: 40px; 
+        /* Strong, rock-solid purple-navy background designed for mobile displays */
+        body {
+            background-image: linear-gradient(145deg, #180930 0%, #0a0d1a 50%, #05060d 100%) !important;
+            background-color: #0a0d1a;
+            background-attachment: fixed;
+            color: #f3f4f6;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
+            padding: 25px;
             min-height: 100vh;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .container { max-width: 1200px; margin: auto; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding-bottom: 40px; }
+        
         h1 { 
             text-align: center; 
-            color: #a78bfa; 
-            font-size: 42px; 
-            letter-spacing: 3px; 
-            margin-bottom: 40px; 
-            text-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+            color: #c084fc; 
+            font-size: 30px; 
+            letter-spacing: 2px; 
+            margin-top: 15px;
+            margin-bottom: 35px; 
+            text-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+            line-height: 1.4;
         }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+            h1 { font-size: 42px; }
+        }
+        
         .card { 
-            background: rgba(17, 24, 39, 0.85); 
+            background: rgba(15, 23, 42, 0.95); 
             border: 2px solid #3b82f6; 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            backdrop-filter: blur(4px);
-            padding: 35px; 
-            border-radius: 12px; 
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            padding: 30px; 
+            border-radius: 14px; 
         }
-        .card-ai { border-color: #a78bfa; }
-        h3 { font-size: 26px; margin-top: 0; margin-bottom: 25px; border-bottom: 2px solid #3f3f46; padding-bottom: 10px; }
-        .metric-container { margin-bottom: 20px; }
-        .metric { font-size: 36px; color: #10b981; font-weight: bold; margin: 5px 0; }
-        .label { color: #9ca3af; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
-        img { width: 100%; border-radius: 8px; border: 2px solid #3f3f46; margin-top: 25px; background: #000; }
+        
+        .card-ai { border-color: #c084fc; }
+        
+        h3 { 
+            font-size: 24px; 
+            margin-top: 0; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid #3f3f46; 
+            padding-bottom: 12px; 
+            letter-spacing: 1px;
+        }
+        
+        .metric-container { margin-bottom: 25px; }
+        .metric { font-size: 34px; font-weight: bold; margin-top: 8px; }
+        .label { color: #9ca3af; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; display: block; }
+        
+        img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 10px; 
+            border: 2px solid #4b5563; 
+            margin-top: 15px; 
+            background-color: #000;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🛰️ EXOPLANET COMPUTATIONAL DISCOVERY PORTAL</h1>
         <div class="grid">
+            
             <div class="card">
-                <h3 style="color: #3b82f6;">🔭 TARGET PARAMETERS</h3>
+                <h3 style="color: #3b82f6;">%#2415; TARGET PARAMETERS</h3>
                 <div class="metric-container">
                     <span class="label">🌟 System Identity:</span> 
                     <div class="metric" style="color: #60a5fa;">Kepler-10</div>
                 </div>
                 <div class="metric-container">
                     <span class="label">📊 Processed Telemetry:</span> 
-                    <div class="metric">43,097 Points</div>
+                    <div class="metric" style="color: #10b981;">43,097 Points</div>
                 </div>
                 <div class="metric-container">
                     <span class="label">⏱️ Calculated Orbital Period:</span> 
-                    <div class="metric">0.8375 Days</div>
+                    <div class="metric" style="color: #10b981;">0.8375 Days</div>
                 </div>
                 <div class="metric-container">
                     <span class="label">📐 Reverse-Engineered Radius:</span> 
                     <div class="metric" style="color: #34d399;">2.67x Earth</div>
                 </div>
             </div>
+            
             <div class="card card-ai">
-                <h3 style="color: #a78bfa;">🤖 LIVE AI VERIFICATION MATRIX</h3>
+                <h3 style="color: #c084fc;">🤖 LIVE AI VERIFICATION MATRIX</h3>
                 <div class="metric-container">
                     <span class="label">🧠 ML Classification:</span> 
-                    <div class="metric" style="color:#f87171;">🚨 ANOMALY ISOLATED</div>
+                    <div class="metric" style="color: #f87171;">🚨 ANOMALY ISOLATED</div>
                 </div>
                 <div class="metric-container">
                     <span class="label">🎯 Model Confidence Rating:</span> 
-                    <div class="metric" style="color: #a78bfa;">98.42%</div>
+                    <div class="metric" style="color: #c084fc;">98.42%</div>
                 </div>
                 <div class="metric-container">
                     <span class="label">⚡ Pipeline Status:</span> 
-                    <div class="metric" style="color:#60a5fa;">PRODUCTION READY</div>
+                    <div class="metric" style="color: #60a5fa;">PRODUCTION READY</div>
                 </div>
                 <span class="label">📈 Transit Light Curve Diagram:</span>
-                <img src="./planet_proof.png" alt="Transit Light Curve Diagram">
+                <!-- Target Image container hooked directly to the JSON bridge -->
+                <img id="live-graph" src="" alt="Loading NASA Telemetry Graph...">
             </div>
+            
         </div>
     </div>
+
+    <script>
+        // Real-time client bridge pulling the embedded data directly from the JSON
+        fetch('platform_data.json')
+            .then(response => response.json())
+            .then(data => {
+                if(data.image_data_uri) {
+                    document.getElementById('live-graph').src = data.image_data_uri;
+                }
+            })
+            .catch(err => console.error("Data binding index failure:", err));
+    </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA Telemetry & AI Analytics Dashboard</title>
-    <style>
-        body { 
-            background: linear-gradient(135deg, #1e0b36, #0b0f19, #0a1128); 
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #f3f4f6; 
-            font-family: 'Courier New', Courier, monospace; 
-            padding: 40px; 
-            margin: 0;
-            min-height: 100vh;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .container { max-width: 1200px; margin: auto; }
-        h1 { 
-            text-align: center; 
-            color: #a78bfa; 
-            font-size: 42px; 
-            letter-spacing: 3px; 
-            margin-bottom: 40px; 
-            text-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
-        }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
-        .card { 
-            background: rgba(17, 24, 39, 0.85); 
-            border: 2px solid #3b82f6; 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            backdrop-filter: blur(4px);
-            padding: 35px; 
-            border-radius: 12px; 
-        }
-        .card-ai { border-color: #a78bfa; }
-        h3 { font-size: 26px; margin-top: 0; margin-bottom: 25px; border-bottom: 2px solid #3f3f46; padding-bottom: 10px; }
-        .metric-container { margin-bottom: 20px; }
-        .metric { font-size: 36px; color: #10b981; font-weight: bold; margin: 5px 0; }
-        .label { color: #9ca3af; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
-        img { width: 100%; border-radius: 8px; border: 2px solid #3f3f46; margin-top: 25px; background: #000; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🛰️ EXOPLANET COMPUTATIONAL DISCOVERY PORTAL</h1>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: #3b82f6;">🔭 TARGET PARAMETERS</h3>
-                <div class="metric-container">
-                    <span class="label">🌟 System Identity:</span> 
-                    <div class="metric" style="color: #60a5fa;">Kepler-10</div>
-                </div>
-                <div class="metric-container">
-                    <span class="label">📊 Processed Telemetry:</span> 
-                    <div class="metric">43,097 Points</div>
-                </div>
-                <div class="metric-container">
-                    <span class="label">⏱️ Calculated Orbital Period:</span> 
-                    <div class="metric">0.8375 Days</div>
-                </div>
-                <div class="metric-container">
-                    <span class="label">📐 Reverse-Engineered Radius:</span> 
-                    <div class="metric" style="color: #34d399;">2.67x Earth</div>
-                </div>
-            </div>
-            <div class="card card-ai">
-                <h3 style="color: #a78bfa;">🤖 LIVE AI VERIFICATION MATRIX</h3>
-                <div class="metric-container">
-                    <span class="label">🧠 ML Classification:</span> 
-                    <div class="metric" style="color:#f87171;">🚨 ANOMALY ISOLATED</div>
-                </div>
-                <div class="metric-container">
-                    <span class="label">🎯 Model Confidence Rating:</span> 
-                    <div class="metric" style="color: #a78bfa;">98.42%</div>
-                </div>
-                <div class="metric-container">
-                    <span class="label">⚡ Pipeline Status:</span> 
-                    <div class="metric" style="color:#60a5fa;">PRODUCTION READY</div>
-                </div>
-                <span class="label">📈 Transit Light Curve Diagram:</span>
-                <img src="./planet_proof.png" alt="Transit Light Curve Diagram">
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+                        
